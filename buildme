@@ -1,6 +1,8 @@
 #/bin/bash
 
-if [ "armv6l" = `arch` -o "armv71" = `arch` ]; then
+architecture=`uname -m`
+
+if [ "armv6l" = "$architecture" -o "armv7l" = "$architecture" ]; then
 	# Native compile on the Raspberry Pi
 	mkdir -p build/raspberry/release
 	pushd build/raspberry/release
